@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="app.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="main-menu">
+            <img src = "assets/tictactoe.png">
+            <button id="playGame">Play Game</button>
+            <button id="darkMode">Gamer Mode</button>
+        </div>
+        <table id="board" class="hide">
+            <tr>
+                <td></td>
+                <td id="topmid"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="midleft"></td>
+                <td id="midmid"></td>
+                <td id="midright"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td id="bottommid"></td>
+                <td></td>
+            </tr>
+        </table>
+        <div class="game-over hide">
+            <h1>GameOver</h1>
+            <!-- <button id="playAgain">Play Again?</button> -->
+            <button id="menu">Main Menu</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

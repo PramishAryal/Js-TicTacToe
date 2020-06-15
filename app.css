@@ -1,0 +1,87 @@
+body {
+    background-color: #2D3142;
+    text-align: center;
+}
+
+h1 {
+    font-size: 60px;
+    color: #EF8354;
+}
+
+table {
+    margin: 5% auto;
+    border-collapse: collapse;
+    border: 10px solid black;
+    border-radius: 50px;
+}
+
+td {
+    width: 150px;
+    height: 150px;
+    background: slategray;
+}
+
+td:hover {
+    background-color: lightgray;
+}
+
+#topmid {
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+}
+
+#midleft,
+#midright {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+#midmid {
+    border: 2px solid black;
+}
+
+#bottommid {
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+
+}
+
+.hide {
+    display: none;
+}
+
+.main-menu {
+    margin: 10px 28%;
+}
+
+.main-menu button {
+    width: 200px;
+    font-size: 20px;
+    height: 50px;
+    margin: 20px 60px;
+    border-radius: 50px;
+    border: none;
+}
+
+.main-menu button:hover,
+#playAgain:hover,
+#menu:hover {
+    background: #4F5D75;
+    color: #BFC0C0;
+    border: 10px solid b
+}
+
+#playAgain,
+#menu {
+    width: 200px;
+    font-size: 20px;
+    height: 50px;
+    border-radius: 50px;
+    margin: 10%;
+    border: none;
+}
+
+.game-over {
+    text-align: center;
+    margin-top: 10%;
+}
