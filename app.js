@@ -2,13 +2,12 @@ const title = document.createElement('h1');
 title.innerText = 'Tic Tac Toe';
 document.body.prepend(title);
 
-const gameOver = document.querySelector('.game-over')
-
+const gameOver = document.querySelector('.game-over');
 const playGame = document.querySelector('#playGame');
 const mainMenu = document.querySelector('.main-menu');
 const menu = document.querySelector('#menu');
 const board = document.querySelector('#board');
-
+const gameOverText = document.querySelector('#gameOverText');
 playGame.addEventListener('click', () => {
 	mainMenu.classList.toggle('hide');
 	board.classList.toggle('hide');
@@ -34,8 +33,18 @@ let ocount = 0;
 let counter = 0;
 let bGameOver = false;
 
+let winner;
+
 let wrapUp = () => {
 	board.classList.toggle('hide');
+	if (winner == null) {
+		gameOverText.innerText = 'TIE';
+	} else if (winner === 'lightgrey') {
+		gameOverText.innerText = 'X WON';
+	} else {
+		gameOverText.innerText = 'O WON';
+	}
+
 	gameOver.classList.toggle('hide');
 	// box.forEach((n)=>
 	// {
@@ -63,7 +72,6 @@ box.forEach((n) => {
 		}
 	});
 });
-
 function gameover() {
 	if (ocount < 5) {
 		if (
@@ -71,51 +79,61 @@ function gameover() {
 			box[0].style.backgroundColor === box[2].style.backgroundColor &&
 			box[0].style.backgroundColor !== ''
 		) {
+			winner = box[0].style.backgroundColor;
 			return true;
 		} else if (
 			box[3].style.backgroundColor === box[4].style.backgroundColor &&
 			box[3].style.backgroundColor === box[5].style.backgroundColor &&
 			box[5].style.backgroundColor !== ''
 		) {
+			winner = box[3].style.backgroundColor;
+
 			return true;
 		} else if (
 			box[6].style.backgroundColor === box[7].style.backgroundColor &&
 			box[6].style.backgroundColor === box[8].style.backgroundColor &&
 			box[8].style.backgroundColor !== ''
 		) {
+			winner = box[6].style.backgroundColor;
 			return true;
 		} else if (
 			box[0].style.backgroundColor === box[3].style.backgroundColor &&
 			box[0].style.backgroundColor === box[6].style.backgroundColor &&
 			box[6].style.backgroundColor !== ''
 		) {
+			winner = box[0].style.backgroundColor;
 			return true;
 		} else if (
 			box[1].style.backgroundColor === box[4].style.backgroundColor &&
 			box[1].style.backgroundColor === box[7].style.backgroundColor &&
 			box[7].style.backgroundColor !== ''
 		) {
+			winner = box[1].style.backgroundColor;
 			return true;
 		} else if (
 			box[2].style.backgroundColor === box[5].style.backgroundColor &&
 			box[2].style.backgroundColor === box[8].style.backgroundColor &&
 			box[8].style.backgroundColor !== ''
 		) {
+			winner = box[2].style.backgroundColor;
 			return true;
 		} else if (
 			box[8].style.backgroundColor !== '' &&
 			box[0].style.backgroundColor === box[4].style.backgroundColor &&
 			box[4].style.backgroundColor === box[8].style.backgroundColor
 		) {
+			winner = box[8].style.backgroundColor;
 			return true;
 		} else if (
 			box[6].style.backgroundColor !== '' &&
 			box[2].style.backgroundColor === box[4].style.backgroundColor &&
 			box[4].style.backgroundColor === box[6].style.backgroundColor
 		) {
+			winner = box[6].style.backgroundColor;
 			return true;
 		}
 	} else {
+		winner = null;
 		return true;
 	}
 	return false;
